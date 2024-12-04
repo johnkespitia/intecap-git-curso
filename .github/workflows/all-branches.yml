@@ -1,0 +1,21 @@
+name: Hello world GH Actions
+
+on:
+    push:
+        branches:
+            - "*"
+jobs:
+
+    test-in-branch:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@main
+        - name: release
+          run: echo "APP_NAME='APLICACION 0'" >> .env
+
+    greeting-in-branch:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@main
+        - name: Saludo
+          run: echo "Hola mundo"
